@@ -10,11 +10,9 @@ Implements the HttpClient class described in the [article](https://www.discussde
 npm i nodejs-http-clientt --save
 ```
 
-## Basic Usage
+## Basic Usage HttpClient
 
 ``` javascript
-const HttpClient = require('nodejs-http-client');
-
 const httpClient = new HttpClient({ baseURL: 'http://httpbin.org' });
 
 // GET
@@ -27,4 +25,14 @@ httpClient.post('/post', { test: "test" })
     .then((response => console.log(response)))
     .catch(err => console.log(err));
 
+```
+
+## Basic Usage ApiClient
+
+``` javascript
+const apiClient = new ApiClient('https://jsonplaceholder.typicode.com');
+
+apiClient.users.get()
+    .then((response => console.log(response)))
+    .catch(err => console.log(err));
 ```
